@@ -4,9 +4,11 @@
   box-sizing: border-box;
 }
 .machine{
-  display: inline-block;
-  position: relative;
-  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: -webkit-fill-available;
+  width: -webkit-fill-available;
 }
 .container{
   width : 1200px;
@@ -46,13 +48,11 @@
 }
 .col{
   width: 100%;
-  //transition: transform 0.2s linear;
 }
 .row{
   border-style: solid;
   border-color : #eee;
   border-width: 2px;
-  //border-radius : 50%;
 }
 .row:after{
   content: '';
