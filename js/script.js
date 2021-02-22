@@ -9,6 +9,7 @@ window.raf = (function () {
     }
   );
 })();
+
 /*--------------=== Slot machine definition ===--------------*/
 (function () {
   var NAME = "SlotMachine",
@@ -162,7 +163,7 @@ window.raf = (function () {
       this.rotateHandle();
       this.run();
     }
-    
+
     if (this.options.autoPlay)
       nextLoop = setTimeout(
         function () {
@@ -171,7 +172,7 @@ window.raf = (function () {
         this.options.autoPlayTime * 1000
       );
   };
-  
+
   SlotMachine.prototype.afterRun = function () {
     completed = true;
     var results = [],
@@ -183,7 +184,7 @@ window.raf = (function () {
         break;
       }
     }
-    
+
     if (win) {
       this.showWin(true);
       setTimeout(
@@ -194,7 +195,7 @@ window.raf = (function () {
       );
     }
   };
-  
+
   SlotMachine.prototype.rotateHandle = function () {
     var handle = document.querySelector(".handle");
     if (handle) {
@@ -224,69 +225,12 @@ window.raf = (function () {
     completed = true;
     clearTimeout(nextLoop);
     //get settings
-    var BannerFlow = arguments[0],
-      settingStyle = "",
+    var settingStyle = "",
       machine = document.querySelector(".machine"),
       container = document.querySelector(".container");
     machine.style.opacity = 0;
     for (var key in defaultSettings) {
       this.options[key] = defaultSettings[key];
-    }
-
-    if (BannerFlow !== undefined) {
-      var settings = BannerFlow.settings;
-      this.options.winRate = settings.winRate
-        ? settings.winRate
-        : defaultSettings.winRate;
-      this.options.autoPlay = settings.autoPlay;
-      this.options.colNum = settings.numberColumn
-        ? settings.numberColumn
-        : defaultSettings.colNum;
-      this.options.layout = settings.layout
-        ? settings.layout
-        : defaultSettings.layout;
-      this.options.machineColor = settings.machineColor
-        ? settings.machineColor
-        : defaultSettings.machineColor;
-      this.options.machineBorder =
-        settings.machineBorder >= 0
-          ? settings.machineBorder
-          : defaultSettings.machineBorder;
-      this.options.height = settings.height
-        ? settings.height
-        : defaultSettings.height;
-      this.options.width = settings.width
-        ? settings.width
-        : defaultSettings.width;
-      this.options.autoSize = settings.autoSize;
-      
-      if (this.options.autoSize) {
-        this.options.height = window.innerHeight;
-        this.options.width = window.innerWidth;
-      }
-
-      this.options.handleShow = settings.handleShow;
-      this.options.handleWidth = this.options.handleShow
-        ? defaultSettings.handleWidth
-        : 0;
-      this.options.autoPlayTime = settings.autoPlayTime
-        ? settings.autoPlayTime
-        : defaultSettings.autoPlayTime;
-      this.options.customImage = settings.customImage;
-    }
-
-    //apply settings
-    if (this.options.customImage) {
-      var urls = BannerFlow.text.strip().split(",");
-      this.options.names = [];
-      for (var i = 0; i < urls.length; i++) {
-        var name = "image-" + i;
-        urls[i];
-        this.options.names.push(name);
-        settingStyle += getStyle("." + name + ":after", {
-          "background-image": "url('" + urls[i] + "')",
-        });
-      }
     }
 
     settingStyle += getStyle(".machine", {
@@ -335,35 +279,21 @@ window.raf = (function () {
   };
 
   SlotMachine.prototype.addListener = function () {
-    var BannerFlow = arguments[0],
-      timer,
+    var timer,
       that = this,
       container = document.querySelector(".container");
-    if (typeof BannerFlow != "undefined") {
-      // BannerFlow event
-      BannerFlow.addEventListener(BannerFlow.RESIZE, function () {
-        //clearTimeout(timer);
-        //timer = setTimeout(function(){that.init(BannerFlow);that.beforeRun()},500);
-      });
-      BannerFlow.addEventListener(BannerFlow.CLICK, function () {
+    
+    // Window event
+    var handle = document.querySelector(".handle");
+
+    if (supportTouch) {
+      handle.addEventListener("touchstart", function () {
         that.beforeRun();
       });
     } else {
-      // Window event
-      window.addEventListener("resize", function () {
-        //clearTimeout(timer);
-        //timer = setTimeout(function(){that.init(BannerFlow);that.beforeRun()},500)
+      handle.addEventListener("click", function () {
+        that.beforeRun();
       });
-
-      if (supportTouch) {
-        window.addEventListener("touchstart", function () {
-          that.beforeRun();
-        });
-      } else {
-        window.addEventListener("click", function () {
-          that.beforeRun();
-        });
-      }
     }
 
     var slotTrigger = document.querySelector("#slot-trigger");
@@ -373,7 +303,7 @@ window.raf = (function () {
       });
     }
   };
-  
+
   window[NAME] = SlotMachine;
 })();
 
@@ -556,25 +486,12 @@ if (!HTMLElement.prototype.removeClass) {
 /*--------------=== Main function ===--------------*/
 var timer,
   widget = null;
-if (typeof BannerFlow != "undefined") {
-  BannerFlow.addEventListener(BannerFlow.SETTINGS_CHANGED, function () {
-    clearTimeout(timer);
-    timer = setTimeout(function () {
-      if (widget == null) {
-        widget = new SlotMachine();
-        widget.addListener(BannerFlow);
-      }
-      widget.init(BannerFlow);
-      widget.beforeRun();
-    }, 500);
-  });
-} else {
-  window.addEventListener("load", function (e) {
-    if (widget == null) {
-      widget = new SlotMachine();
-      widget.addListener();
-    }
-    widget.init();
-    widget.beforeRun();
-  });
-}
+
+window.addEventListener("load", function (e) {
+  if (widget == null) {
+    widget = new SlotMachine();
+    widget.addListener();
+  }
+  widget.init();
+  widget.beforeRun();
+});
