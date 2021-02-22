@@ -1,0 +1,283 @@
+*{
+  padding : 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.machine{
+  display: inline-block;
+  position: relative;
+  opacity: 0;
+}
+.container{
+  width : 1200px;
+  height : 400px;
+  border-style : solid;
+  border-color : hsl(0,10%,50%) hsl(0,20%,50%) hsl(0,10%,50%) hsl(0,20%,50%);
+  border-width : 15px;
+  display : flex;
+  background: linear-gradient(to bottom, #696992 0%, #afb0b7 20%, #e9e9e9 35%, #8f9e90 69%, #e7e7e7 100%);
+  box-shadow: inset 0 0 50px #000000;
+  position: relative;
+  overflow: hidden;
+  float: left;
+  background-clip: content-box;
+}
+.container:before{
+  content: '';
+  position: absolute;
+  width: calc(100% - 40px);
+  top : calc(50% - 20px);
+  left: 0;
+  border-style: solid;
+  border-width: 20px 20px;
+  border-color: transparent hsla(0,70%,50%,0.75) transparent hsla(0,70%,50%,0.75);
+  height : 2px;
+  background-color: rgba(250,250,250,0.5);
+  overflow: hidden;
+  z-index: 1;
+  background-clip: content-box;
+}
+.container:after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background : linear-gradient(to bottom, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0) 20%,rgba(0,0,0,0) 80%,rgba(0,0,0,0.8) 100%);
+}
+.col{
+  width: 100%;
+  //transition: transform 0.2s linear;
+}
+.row{
+  border-style: solid;
+  border-color : #eee;
+  border-width: 2px;
+  //border-radius : 50%;
+}
+.row:after{
+  content: '';
+  display: block;
+  padding-top: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.sand1:after      {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/4b0a8c3f-1378-4911-88a8-69b51be16467/94fdb8b3-fa03-491d-b277-02bea708cd75.jpeg?h=540&w=540");}
+.sand2:after      {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/5b3cc9eb-5915-425b-a744-67aa23f55689/6a46e5b3-91c7-4ac3-9b6c-c1a6d5f90c33.jpeg?h=540&w=540");}
+.sand3:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/eca6f6e0-5ab3-45e6-9c4a-3d66e863043a/31cb5e93-903a-43bb-9f51-ab7ccf10acec.jpeg?h=540&w=540");}
+.sand4:after {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/3b1b11ad-0f44-4385-b917-e7c06bd0e142/af141658-cb9c-4dbd-9e3a-7c23c67e053c.jpeg?h=540&w=540");}
+.sand5:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/4efbf9ec-a6c3-4c6a-9de7-a36887043240/93007d12-260c-4fa3-bbd3-5938b9628e06.jpeg?h=540&w=540");}
+.sand6:after        {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/f944db93-95d9-4857-a091-b1ac5b70caf2/894ce5f3-89d3-407b-be58-f092bd65a319.jpeg?h=540&w=540");}
+.sand7:after      {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/188e858f-14f5-4771-a85f-3be66bb6cce2/bd65d2b3-4b80-4e6d-9c2d-8721dbb0e7d3.jpeg?h=540&w=540");}
+.sand8:after      {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/7f5bacd5-4427-45eb-b1fa-d37874b0f098/a600f749-77df-4a4c-a81c-8c6b1a72a631.jpeg?h=540&w=540");}
+.sand9:after      {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/f609c42d-4e3f-4d67-b744-38cb0da4bacb/d0ca002c-cb6c-409f-92c5-8257d67a7048.jpeg?h=540&w=540");}
+.sand10:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/e6ed6593-f1a9-462b-8716-26d700d2af7e/0e5bb2e2-51c1-4052-af6a-506c1c0d81b4.jpeg?h=540&w=540");}
+.sand11:after {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/a3037d5f-e4a8-4f2c-8f2d-cfa7d621e71f/3c8156fa-6d8e-4d17-b029-8c1f4e3d2652.jpeg?h=540&w=540");}
+.sand12:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/b549d588-6a03-4295-82b9-4900ee33b5f4/c0a42b7c-44e1-422d-b3c1-63a9b8f6225c.jpeg?h=540&w=540");}
+.sand13:after        {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/1d8b3b08-d2fc-459b-a99d-645245a30eff/2423c36a-b532-46f5-aae5-4aa566dafd50.jpeg?h=540&w=540");}
+.sand14:after      {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/a8aca5df-7cfa-4b70-8039-7e3cd0b392c7/60dacc75-6b99-4da8-a256-533b35fe8221.jpeg?h=540&w=540");}
+.sand15:after      {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/31079c1a-b971-44f0-9ea5-69bfa5a64d66/f1396a4e-5b84-4af4-84a7-feb5dbb77710.jpeg?h=540&w=540");}
+.sand16:after      {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/4087be1d-8720-45b7-9051-ae942b939b5f/fe44def3-8c51-4c34-98e0-35aa5f3da110.jpeg?h=540&w=540");}
+.sand17:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/559885a6-7924-498f-8a6c-b339a0ac56bc/ef83c50e-28e6-44db-83e0-1b3093325426.jpeg?h=540&w=540");}
+.sand18:after {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/fa368d4f-c461-4301-ba18-9df79a6467f5/5c5fcc7b-23f2-465f-97c0-e7d38705931f.jpeg?h=540&w=540");}
+.sand19:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/ad234a2c-5caa-4e65-93c4-e1effd8c334d/1cc28e3f-4463-4a27-b07f-56a01c3f6d6c.jpeg?h=540&w=540");}
+.sand20:after        {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/d0453806-0195-4d31-ae9b-ba369540bc5c/2ec67e7d-4f40-4ab1-a966-7f32eda81745.jpeg?h=540&w=540");}
+.sand21:after      {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/f1659cd6-cf8b-47eb-bf3c-9f8b82ba25a7/b0ccebb4-dff3-4b9f-8a03-8965865f6387.jpeg?h=540&w=540");}
+.sand22:after      {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/9516ca0f-3d2e-45ca-8383-1c6b272c82ee/35445bd2-aee5-4edf-9a84-76e346b3ba9e.jpeg?h=540&w=540");}
+.sand23:after      {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/0a5d71f2-16c8-4c7a-8b98-ba46996e488d/f2ba00d2-e9f0-44c3-b5cc-d020662d1ce0.jpeg?h=540&w=540");}
+.sand24:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/829b8009-efd7-4fad-b2a3-521347a1876a/b0da543c-a487-48e1-abef-72d428a70890.jpeg?h=540&w=540");}
+.sand25:after {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/4072923f-e3a7-4f21-b179-e38e9021ce7f/0ba82bad-4eb1-48a3-9c05-aedd91231ba5.jpeg?h=540&w=540");}
+.sand26:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/118e5c9f-e98f-400b-93a1-a677351e4ba2/2c976456-2644-4d37-8374-d7652141fef7.jpeg?h=540&w=540");}
+.sand27:after        {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/9c8a6d77-366e-4d1b-bb63-5c583acae70e/d0c584db-57b7-490a-b472-02985e413d04.jpeg?h=540&w=540");}
+.sand28:after      {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/038ee33f-b663-4e3f-9afd-9e970acfeba1/55e47cfa-ee53-4393-9246-e2144213d2a4.jpeg?h=540&w=540");}
+.snack1:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/44457aa3-3c0b-4972-b3f0-c6ba9ba803ae/snapshotimagehandler_1868069340.jpeg?h=540&w=540");}
+.snack2:after     {background-image : url("https://img.tesco.com/Groceries/pi/836/5000237110836/IDShot_540x540.jpg?h=540&w=540");}
+.snack3:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/95e4598f-fb25-4a67-a0d1-bdcb2ac0c14d/snapshotimagehandler_693406764.jpeg?h=540&w=540");}
+.snack4:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/ed72e4eb-6c3a-41ba-9db9-e129debb3c84/snapshotimagehandler_1482055919.jpeg?h=540&w=540");}
+.snack5:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/a89700cb-ac27-4ef3-86b8-a12e35db0e0e/snapshotimagehandler_2118368258.jpeg?h=540&w=540");}
+.snack6:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/a4f77998-12b4-408a-b3c7-6186cd6ab500/fc104438-4788-48bd-8287-185fcd919373.jpeg?h=540&w=540");}
+.snack7:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/06b1780c-9bf0-4c1f-be07-fb09491e2fb2/6225b378-efab-4842-993b-2cb80c5d6136.jpeg?h=540&w=540");}
+.snack8:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/0d4eea83-3e1a-41f8-bdb5-da73d3da0a4f/snapshotimagehandler_1464922459.jpeg?h=540&w=540");}
+.snack9:after     {background-image : url("https://img.tesco.com/Groceries/pi/034/5060283760034/IDShot_540x540.jpg?h=540&w=540");}
+.snack10:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/91d8dd87-e501-4293-92a9-b5352ec81a65/snapshotimagehandler_1171026236.jpeg?h=540&w=540");}
+.snack11:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/87d0ebb4-c0bf-435a-93d8-e022aed23381/snapshotimagehandler_1624111458.jpeg?h=540&w=540");}
+.snack12:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/34dc5670-60b8-4814-98cf-bfbd22a50e14/snapshotimagehandler_934334299.jpeg?h=540&w=540");}
+.snack13:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/7dea1eaf-5039-44fa-8122-3004ef37e425/snapshotimagehandler_1832848570.jpeg?h=540&w=540");}
+.snack14:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/464a8431-ed4f-4d66-ad5a-c71680492a41/snapshotimagehandler_1283672148.jpeg?h=540&w=540");}
+.snack15:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/a30db359-f9dd-496c-ae04-ebac2a7f383a/snapshotimagehandler_240859463.jpeg?h=540&w=540");}
+.snack16:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/10b2dc52-202f-4838-af00-5de91cba971f/ba511e00-0081-4abe-90db-66609e7efc00.jpeg?h=540&w=540");}
+.snack17:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/55c89bf5-b846-4285-85c1-1728e3e9948e/snapshotimagehandler_457806297.jpeg?h=540&w=540");}
+.snack18:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/10b2dc52-202f-4838-af00-5de91cba971f/ba511e00-0081-4abe-90db-66609e7efc00.jpeg?h=540&w=540");}
+.snack19:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/11d74a8c-d572-4442-8e7a-b1ad5006441e/snapshotimagehandler_1983809507.jpeg?h=540&w=540");}
+.snack20:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/3efb375f-2113-4cd8-bc95-a5fd2b38088e/6d97512b-65dc-4ca5-9117-ca659c553520.jpeg?h=540&w=540");}
+.snack21:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/90d7ad98-c136-47a1-8914-7655c99269d6/snapshotimagehandler_1987107915.jpeg?h=540&w=540");}
+.snack22:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/ceb93dee-8910-4a97-997e-e3d2135988c4/snapshotimagehandler_686698854.jpeg?h=540&w=540");}
+.snack23:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/8907623a-d80b-47f7-8299-8bcf31483a53/snapshotimagehandler_543731666.jpeg?h=540&w=540");}
+.snack24:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/e4ffa25d-687e-4b2f-bc73-82910bc210f8/snapshotimagehandler_663493352.jpeg?h=540&w=540");}
+.snack25:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/14697f23-b0ec-4911-8083-937c65320a2e/snapshotimagehandler_1637594574.jpeg?h=540&w=540");}
+.snack26:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/7d092f81-a689-4188-a1fe-4a4f94774e11/snapshotimagehandler_1228809193.jpeg?h=540&w=540");}
+.snack27:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/09e120e5-83ce-489b-bd90-76ca3cc44048/snapshotimagehandler_542326857.jpeg?h=540&w=540");}
+.snack28:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/815808e8-11bb-4bb9-b89f-a9656de90170/snapshotimagehandler_1671881188.jpeg?h=540&w=540");}
+.snack29:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/46a46d64-238c-4e46-acf9-5f716b0c19e5/snapshotimagehandler_1562676921.jpeg?h=540&w=540");}
+.snack30:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/694b6c23-cb17-4c27-82cd-3589c48ca9e1/snapshotimagehandler_824430713.jpeg?h=540&w=540");}
+.snack31:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/5c54fdd0-7727-4719-9ea2-edb1e1387286/34b12fc0-cc74-45f5-964f-acaaecfce669.jpeg?h=540&w=540");}
+.snack32:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/0d4eea83-3e1a-41f8-bdb5-da73d3da0a4f/snapshotimagehandler_1464922459.jpeg?h=540&w=540");}
+.drink1:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/57ff5161-f55f-4ddd-bcc3-6737669ddb8f/snapshotimagehandler_911461503.jpeg?h=540&w=540");}
+.drink2:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/25b73f88-b312-45e8-90de-d5feafaa814a/snapshotimagehandler_1756093780.jpeg?h=540&w=540");}
+.drink3:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/d1ecd949-0129-4d80-a929-16099ebf9608/snapshotimagehandler_2128492860.jpeg?h=540&w=540");}
+.drink4:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/4e2a16e2-9975-4fae-81f3-620d6f3cda64/1d3a6c65-af2e-4bc7-ba5f-3b6b6ea271d4.jpeg?h=540&w=540");}
+.drink5:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/a292bc4e-99ff-4110-a2cd-2bcaaa6e262a/snapshotimagehandler_1421163058.jpeg?h=540&w=540");}
+.drink6:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/d631d919-6c2e-4d90-93b4-dd72827e38de/snapshotimagehandler_284769983.jpeg?h=540&w=540");}
+.drink7:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/e3d3a2db-7bd2-41bb-915e-9684bed1e162/snapshotimagehandler_1583374362.jpeg?h=540&w=540");}
+.drink8:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/4bd55803-5a3d-44de-a3ea-704fa3e7b60e/snapshotimagehandler_2007497845.jpeg?h=540&w=540");}
+.drink9:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/4fa7b5a8-d7a8-4eff-9c23-31efe09badd7/snapshotimagehandler_1265210742.jpeg?h=540&w=540");}
+.drink10:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/af1e01b9-545a-49e7-a79a-9477a147a085/e4e0110a-0890-40b4-9b3d-278bc1c09a6b.jpeg?h=540&w=540");}
+.drink11:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/5cc66364-c063-48f1-b9e0-8d06bcb5b857/snapshotimagehandler_1451681747.jpeg?h=540&w=540");}
+.drink12:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/0d83d991-a18a-4312-a16b-050c4e8739b0/snapshotimagehandler_443383995.jpeg?h=540&w=540");}
+.drink13:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/6b40cb66-aa68-43de-a4fd-8171053f1e4f/snapshotimagehandler_1329505746.jpeg?h=540&w=540");}
+.drink14:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/79d772e7-0c9e-403b-b7a6-c238f42fe15b/snapshotimagehandler_2123947970.jpeg?h=540&w=540");}
+.drink15:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/076aa448-7a23-4a71-99ce-80d29213bde6/snapshotimagehandler_1666773482.jpeg?h=540&w=540");}
+.drink16:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/3a086766-b8d7-465f-9472-a5b45de7cc4d/snapshotimagehandler_1047934134.jpeg?h=540&w=540");}
+.drink17:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/49b9ade9-4e2a-49a6-93d2-47abdc398a94/snapshotimagehandler_855569850.jpeg?h=540&w=540");}
+.drink18:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/46f958f1-4c42-497c-b79e-e697f125fafe/snapshotimagehandler_715308060.jpeg?h=540&w=540");}
+.drink19:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/e30b459d-bd09-408b-916f-1f667e1275a7/snapshotimagehandler_1585632563.jpeg?h=540&w=540");}
+.drink20:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/358bed68-af18-40bb-a4f2-64b66cd3e827/snapshotimagehandler_209554205.jpeg?h=540&w=540");}
+.drink21:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/2851426c-dbc2-4d40-a7be-399a230c2fd4/snapshotimagehandler_599002282.jpeg?h=540&w=540");}
+.drink22:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/5765ede4-fb66-41c1-8109-17e7bfcedfca/snapshotimagehandler_1831317475.jpeg?h=540&w=540");}
+.drink23:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/25b73f88-b312-45e8-90de-d5feafaa814a/snapshotimagehandler_1756093780.jpeg?h=540&w=540");}
+.drink24:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/d1ecd949-0129-4d80-a929-16099ebf9608/snapshotimagehandler_2128492860.jpeg?h=540&w=540");}
+.drink25:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/4e2a16e2-9975-4fae-81f3-620d6f3cda64/1d3a6c65-af2e-4bc7-ba5f-3b6b6ea271d4.jpeg?h=540&w=540");}
+.drink26:after     {background-image : url("https://digitalcontent.api.tesco.com/v2/media/ghs/9e6291d2-9008-4f0d-a929-341f8e9eedf7/41571af4-2570-4c5a-9f1b-5930b312723a.jpeg?h=540&w=540");}
+.drink27:after     {background-image : url("");}
+.drink28:after     {background-image : url("");}
+/*-------------=== winner style ===-------------*/
+.winner{
+  background-color: transparent;
+  -webkit-transition: transform 0.1s linear,background-color 0.1s ease;
+  -moz-transition: transform 0.1s linear,background-color 0.1s ease;
+  -o-transition: transform 0.1s linear,background-color 0.1s ease;
+  transition: transform 0.1s linear,background-color 0.1s ease;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+  pointer-events: none;
+}
+.winner.active{
+  -webkit-transition: transform 0.1s linear,background-color 0.5s ease;
+  -moz-transition: transform 0.1s linear,background-color 0.5s ease;
+  -o-transition: transform 0.1s linear,background-color 0.5s ease;
+  transition: transform 0.1s linear,background-color 0.5s ease;
+  background-color: rgba(0,0,0,0.5);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+.winner,.winner:before,.winner:after{
+  position: absolute;
+  top: 0;
+  left :0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  display: block;
+  z-index: 3;
+}
+.winner:before,.winner:after{
+  width: 100vw;
+  height: 100vw;
+  top : -25vw;
+}
+.winner:before{
+  background : url(//bannerflow.blob.core.windows.net/resources/winner2-d4e9ae90-43f8-4575-99b9-fc675462bc35.svg?v=636058905940602803) no-repeat center;
+  background-size: cover;
+  -webkit-animation: rotateBackground 12s linear infinite;
+  -moz-animation:    rotateBackground 12s linear infinite;
+  -o-animation:      rotateBackground 12s linear infinite;
+  animation:         rotateBackground 12s linear infinite;
+}
+.winner:after{
+  background : url(//bannerflow.blob.core.windows.net/resources/winner1-e3971196-c01b-4985-8303-3a1829f2d529.svg?v=636058905940602803) no-repeat center;
+  background-size: 50% 50%;
+  -webkit-animation: scaleForeground 2s linear infinite;
+  -moz-animation:    scaleForeground 2s linear infinite;
+  -o-animation:      scaleForeground 2s linear infinite;
+  animation:         scaleForeground 2s linear infinite;
+}
+@-webkit-keyframes rotateBackground {
+  100% { -webkit-transform: rotate(360deg); }
+}
+@-moz-keyframes rotateBackground {
+  100% { -moz-transform: rotate(360deg); }
+}
+@-o-keyframes rotateBackground {
+  100% { -o-transform: rotate(360deg); }
+}
+@keyframes rotateBackground {
+  100% { transform: rotate(360deg); }
+}
+@-webkit-keyframes scaleForeground {
+  50% { -webkit-transform: scale(0.5); }
+}
+@-moz-keyframes scaleForeground {
+  50% { -moz-transform: scale(0.5); }
+}
+@-o-keyframes scaleForeground {
+  50% { -o-transform: scale(0.5); }
+}
+@keyframes scaleForeground {
+  50% { transform: scale(0.5); }
+}
+/*-----------------------------------------------*/
+.handle{
+  position: relative;
+  float: left;
+  vertical-align: top;
+  height : 60px;
+  margin-top : 70px;
+  width : 15px;
+  border-radius: 0 5px 5px 0/20px;
+  border : 1px solid rgba(189, 160, 112, 0.5);
+  background : linear-gradient(to bottom, #CD9819 0%,#f5f5f5 20%,#e2ba78 67%, #b6783d 90%, #CD9819 100%);
+}
+.handle,.handle:before,.handle:after{
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+.handle:before,.handle:after{
+  content: '';
+  display: block;
+  position: absolute;
+}
+.handle:before{
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(163,126,67,0.1);
+  background: linear-gradient(to right, #f5d6b1 0%, #cc9310 20%,#f1e767 60%,#f5f5f5 90%,#f1e767 100%);
+  width: 8px;
+  height: 80px;
+  bottom: 30px;
+  right: -10px;
+  border-bottom-right-radius: 10px 8px;
+}
+.handle:after{
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  top: -64px;
+  right: -17px;
+  border: 1px solid rgba(204,147,16,0.3);
+  background: radial-gradient(ellipse at 75% 25%, #ffffff 0%,#f1e767 25%,#cc9310 60%,#feb645 91%);
+}
+.handle.active{
+  background-position:0 47px;
+}
+.handle.active:before{
+  height: 0px;
+  border-bottom-right-radius: 2px;
+  transform: translateY(5px);
+}
+.handle.active:after{
+  transform: translateY(85px);
+}
