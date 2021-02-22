@@ -233,11 +233,6 @@ window.raf = (function () {
       this.options[key] = defaultSettings[key];
     }
 
-    settingStyle += getStyle(".machine", {
-      "margin-top": (window.innerHeight - this.options.height) / 2 + "px",
-      "margin-left": (window.innerWidth - this.options.width) / 2 + "px",
-    });
-
     settingStyle += getStyle(".container", {
       height: this.options.height + "px",
       width: this.options.width - this.options.handleWidth + "px",
@@ -253,10 +248,6 @@ window.raf = (function () {
       top: (this.options.height - winnerSize) / 2 - 20 + "px",
       left:
         (this.options.width - winnerSize) / 2 - this.options.handleWidth + "px",
-    });
-
-    settingStyle += getStyle(".handle", {
-      "margin-top": this.options.height / 2 - this.options.handleHeight + "px",
     });
 
     document.querySelector("#setting").innerHTML = settingStyle;
